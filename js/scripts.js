@@ -46,6 +46,9 @@ $(document).ready(function() {
   $("#formTwo").submit(function(event) {
     event.preventDefault();
     var amount = parseFloat($("#amountInput").val());
+    if (isNaN(amount)) {
+      amount = 0;
+    }
     var select = $(".typeOfOperation").val();
 
     if (select === "Deposit") {
